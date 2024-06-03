@@ -24,6 +24,10 @@ a {
 a:hover {
     color: #32006f; 
 }
+
+a:active {
+    color: #695087; 
+}
   
   
 ul, ol {
@@ -108,7 +112,6 @@ h1 i {
     color: #5b3da1;
 }
   
-  
 /* Сусідні селектори */
 ol + h2 {
     font-style: italic;
@@ -121,5 +124,41 @@ ol > li {
     list-style-type: decimal;
     margin-left: 20px;
     color: #32006f;
+}
+
+span {
+    font-weight: bold;
+    font-size: 30px;
+}
+  
+.fixed {
+    background-color: rgb(175, 211, 255);
+    position: fixed; 
+    width: 100%;
+    top: 0;
+    right: 0;
+    text-align: center;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.float-image {
+    float: left;  
+    margin: 0 15px 15px 0;  
+}
+
+h1:before {
+    content: "🎨 ";
+}
+  
+h1:after {
+    content: " 🖼️";
+}
+
+a:first-child {
+    font-weight: bold;
 }
   
