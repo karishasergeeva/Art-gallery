@@ -2,64 +2,149 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Art Gallery</title>
+    <title>Мистецтво</title>
     <meta name = "author" content = "Sierhieieva Karyna">
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
 </head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: rgba(241, 241, 241, 0.9);
+        background-size: cover;
+        color: #333;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: rgba(198, 235, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    th, td {
+        border: 1px solid rgba(172, 226, 255, 0.9);
+        padding: 8px;
+        text-align: left;
+    }
+    th {
+        background-color: rgba(67, 165, 218, 0.9);
+    }
+    img {
+        display: block;
+        margin: auto;
+    }
+
+    .col1 {
+        background-color: #cce6ff;
+    }
+
+    .col2 {
+        background-color: #ffcccc;
+    }
+
+    .col3 {
+        background-color: #d9ead3;
+    }
+
+    .col4 {
+        background-color: #ffebcc;
+    }
+
+</style>
 <body>
-    <h2>Таблиці</h2>
-    <table>
-        <caption>Колекція картин</caption>
-        <thead>
+    <div class="container">
+        <h2>Таблиці</h2>
+        <table>
+            <caption>Колекція картин</caption>
+            <thead>
+                <tr>
+                    <th>Мона Ліза</th>
+                    <th>Зоряна ніч</th>
+                    <th>Крик</th>
+                    <th>Народження Венери</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="./src/mona_lisa.jpg" alt="Мона Ліза" width="100"></td>
+                    <td><img src="./src/star_night.jpg" alt="Зоряна ніч" width="100"></td>
+                    <td><img src="./src/scream.jpg" alt="Крик" width="100"></td>
+                    <td><img src="./src/birth.jpg" alt="Народження Венери" width="100"></td>
+                </tr>
+                <tr>
+                    <td><a href="https://uk.wikipedia.org/wiki/Мона_Ліза">Деталі картини "Мона Ліза"</a></td>
+                    <td><a href="https://uk.wikipedia.org/wiki/Зоряна_ніч">Деталі картини "Зоряна ніч"</a></td>
+                    <td><a href="https://uk.wikipedia.org/wiki/Крик">Деталі картини "Крик"</a></td>
+                    <td><a href="https://uk.wikipedia.org/wiki/Народження_Венери">Деталі картини "Народження Венери"</a></td>
+                </tr>
+                <tr>
+                    <td>Мона Ліза, написана Леонардо да Вінчі, вважається одним з найвідоміших творів мистецтва у світі.</td>
+                    <td>Зоряна ніч - одна з найвідоміших картин Вінсента ван Гога, створена в 1889 році.</td>
+                    <td>Крик - шедевр норвезького художника Едварда Мунка, створений у 1893 році.</td>
+                    <td>Народження Венери - відома картина Сандро Боттічеллі, створена близько 1486 року.</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <table>
+            <colgroup>
+              <col class="col1">
+              <col class="col2">
+              <col class="col3">
+              <col class="col4">
+            </colgroup>
             <tr>
-                <th>Мона Ліза</th>
-                <th>Зоряна ніч</th>
-                <th>Крик</th>
-                <th>Народження Венери</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><img src="./src/mona_lisa.jpg" alt="Мона Ліза" width="300"></td>
-                <td><img src="./src/star_night.jpg" alt="Зоряна ніч" width="300"></td>
-                <td><img src="./src/scream.jpg" alt="Крик" width="300"></td>
-                <td><img src="./src/birth.jpg" alt="Народження Венери" width="300"></td>
+              <th colspan="4">Картинна Галерея</th>
             </tr>
             <tr>
-                <td><a href="https://uk.wikipedia.org/wiki/Мона_Ліза">Деталі картини "Мона Ліза"</a></td>
-                <td><a href="https://uk.wikipedia.org/wiki/Зоряна_ніч">Деталі картини "Зоряна ніч"</a></td>
-                <td><a href="https://uk.wikipedia.org/wiki/Крик">Деталі картини "Крик"</a></td>
-                <td><a href="https://uk.wikipedia.org/wiki/Народження_Венери">Деталі картини "Народження Венери"</a></td>
+              <td rowspan="2">Назва картини</td>
+              <td colspan="2">Художник</td>
+              <td>Рік створення</td>
             </tr>
             <tr>
-                <td>Мона Ліза, написана Леонардо да Вінчі, вважається одним з найвідоміших творів мистецтва у світі.</td>
-                <td>Зоряна ніч - одна з найвідоміших картин Вінсента ван Гога, створена в 1889 році.</td>
-                <td>Крик - шедевр норвезького художника Едварда Мунка, створений у 1893 році.</td>
-                <td>Народження Венери - відома картина Сандро Боттічеллі, створена близько 1486 року.</td>
+              <td>Ім'я</td>
+              <td>Прізвище</td>
+              <td></td>
             </tr>
-        </tbody>
-    </table>
+            <tr>
+              <td rowspan="2">Моно Ліза</td>
+              <td>Леонардо</td>
+              <td>да Вінчі</td>
+              <td>1503</td>
+            </tr>
+            <tr>
+              <td>Вінсент</td>
+              <td>Ван Гог</td>
+              <td>1889</td>
+            </tr>
+            <tr>
+              <td colspan="4">Герцогиня Аргіля</td>
+            </tr>
+            <tr>
+              <td>Джоан</td>
+              <td colspan="2">Міро</td>
+              <td>1927</td>
+            </tr>
+            <tr>
+              <td>Дівчина з перлиною</td>
+              <td>Ян</td>
+              <td>Вермеєр</td>
+              <td>1665</td>
+            </tr>
+            <tr>
+              <td>Автопортрет з кучерявим волоссям</td>
+              <td >Фріда</td>
+              <td>Кало</td>
+              <td>1940</td>
+            </tr>
+          </table>
     
-    <h3>Складна таблиця</h3>
-    <table>
-        <colgroup>
-        <col style="background-color: #f0f8ff" />
-        <col class="colgroup-example" />
-        </colgroup>
-        <thead>
-        <tr>
-            <th colspan="2">Заголовок таблиці</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td rowspan="2">Об'єднана комірка</td>
-            <td>Комірка 1</td>
-        </tr>
-        <tr>
-            <td>Комірка 2</td>
-        </tr>
-        </tbody>
-    </table>
+        <a href="./index.html">Повернутись на головну</a>
+    </div>
 </body>
 </html>
