@@ -92,11 +92,63 @@
             <p class="text">Ще один параграф для демонстрації.</p>
         </div>
 
+        <div id="hoverTarget"></div>
+        <br>
+    
+        <div id="dragElement" class="draggable">
+            Перетягніть мене!
+        </div>
+        <div id="dropZone" class="dropzone">
+            <p>Кидайте елемент сюди!</p>
+        </div>
+
         <p><a href="./arts.html">Тут</a> ви можете знайти інформацію про картини</p>
         <p><a href="./collection.html">Тут</a> ви можете знайти інформацію про мистецтво</p>
         <p><a href="./contacts.html">Тут</a> наші контакти</p>
     </div>
+    <script>
+        // Зміна стилю при наведенні миші
+        const hoverTarget = document.getElementById("hoverTarget");
+        hoverTarget.addEventListener("mouseover", function (event) {
+            event.target.style.backgroundColor = "lightgreen";
+        });
+        hoverTarget.addEventListener("mouseout", function (event) {
+            event.target.style.backgroundColor = "";
+        });
 
+        // Перетягування елемента
+        let isDragging = false;
+        let initialX;
+        let initialY;
+        let offsetX = 0;
+        let offsetY = 0;
+        let draggedElement;
+
+        document.addEventListener('mousedown', (event) => {
+            if (event.target.classList.contains('draggable')) {
+                isDragging = true;
+                initialX = event.clientX - offsetX;
+                initialY = event.clientY - offsetY;
+                draggedElement = event.target;
+            }
+        });
+
+        document.addEventListener('mousemove', (event) => {
+            if (isDragging) {
+                offsetX = event.clientX - initialX;
+                offsetY = event.clientY - initialY;
+                draggedElement.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (isDragging) {
+                isDragging = false;
+                offsetX = 0;
+                offsetY = 0;
+            }
+        });
+    </script>
 
 
 </body>
