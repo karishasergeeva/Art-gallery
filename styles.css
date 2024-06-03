@@ -102,3 +102,24 @@ img {
     background-color: #ffebcc;
 }
 
+
+/* Контекстні селектори */
+h1 i { 
+    color: #5b3da1;
+}
+  
+  
+/* Сусідні селектори */
+ol + h2 {
+    font-style: italic;
+    color: #ff4500;
+}
+
+  
+/* Дочірні селектори */
+ol > li {
+    list-style-type: decimal;
+    margin-left: 20px;
+    color: #32006f;
+}
+  
