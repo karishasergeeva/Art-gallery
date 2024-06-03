@@ -116,5 +116,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // document.write("<p>Доданий параграф за допомогою document.write."); 
 });
 
+// Використання подій миші
+
+
+
 
 

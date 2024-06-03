@@ -40,10 +40,106 @@
             <dd>Народження Венери - відома картина Сандро Боттічеллі, створена близько 1486 року.</dd>
         </dl>
         
+        <button id="myButton" onclick="handleClick()">Натисни тут</button>
+        <button id="mySecondButton">Натисни тут</button>
+        <button id="Delete">Видалити обробник</button>
+    
+        <ul id="highlightList">
+            <li>Марія Примаченко</li>
+            <li>Михайло Бойчук</li>
+            <li>Олександр Архипенко</li>
+        </ul>
+    
+        <div id="menu">
+            <button data-action="sayHello">Привіт</button>
+            <button data-action="sayGoodbye">До побачення</button>
+        </div>
         
 
         <a href="./index.html">Повернутись на головну</a>
     </div>
-    
+    <script>
+        function handleClick() {
+            const clickMessage = document.createElement("p");
+            clickMessage.textContent = "Посилання натиснуто!";
+            document.body.appendChild(clickMessage);
+        }
+        
+        // Призначення обробника події через атрибут
+        document.getElementById("myButton").onclick = handleClick;
+        
+        // Призначення обробника події через властивість
+        const delete_button = document.getElementById("mySecondButton");
+        delete_button.onclick = function () {
+            const clickMessage = document.createElement("p");
+            clickMessage.textContent = "Ви натиснули на другу кнопку!";
+            document.body.appendChild(clickMessage);
+        };
+        
+        // Використання addEventListener
+        const myButton = document.getElementById("myButton");
+        function firstHandler() {
+            const firstHandlerMessage = document.createElement("p");
+            firstHandlerMessage.textContent = "Перший обробник події";
+            document.body.appendChild(firstHandlerMessage);
+        }
+
+        function secondHandler() {
+            const secondHandlerMessage = document.createElement("p");
+            secondHandlerMessage.textContent = "Другий обробник події";
+            document.body.appendChild(secondHandlerMessage);
+        }
+        myButton.addEventListener("click", firstHandler);
+        myButton.addEventListener("click", secondHandler);
+
+        // Використання handleEvent
+        const handlerObject = {
+        handleEvent(event) {
+            const handlerObjectMessage = document.createElement("p");
+            handlerObjectMessage.textContent =
+            "Обробник події об'єктом: " + event.currentTarget.tagName;
+            document.body.appendChild(handlerObjectMessage);
+        },
+        };
+        myButton.addEventListener("click", handlerObject);
+
+        // Видалення обробника події
+        const mySecondButton = document.getElementById("Delete");
+        mySecondButton.addEventListener("click", function () {
+            myButton.removeEventListener("click", firstHandler);
+            myButton.removeEventListener("click", secondHandler);
+            myButton.removeEventListener("click", handlerObject);
+            const removeHandlerMessage = document.createElement("p");
+            removeHandlerMessage.textContent = "Обробники подій видалено!";
+            document.body.appendChild(removeHandlerMessage);
+        });
+
+        // Підсвічування елементів списку
+        const list = document.getElementById("highlightList");
+        list.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+            const items = list.getElementsByTagName("li");
+            for (let item of items) {
+            item.style.backgroundColor = "";
+            }
+            event.target.style.backgroundColor = "#ffebcd";
+        }
+        });
+
+        // Створення меню з обробниками
+        const menu = document.getElementById("menu");
+        menu.addEventListener("click", function (event) {
+        if (event.target.tagName === "BUTTON") {
+            const action = event.target.getAttribute("data-action");
+            const menuActionMessage = document.createElement("p");
+            if (action === "sayHello") {
+            menuActionMessage.textContent = "Привіт!";
+            } else if (action === "sayGoodbye") {
+            menuActionMessage.textContent = "До побачення!";
+            }
+            document.body.appendChild(menuActionMessage);
+        }
+        });
+    </script>
 </body>
 </html>
