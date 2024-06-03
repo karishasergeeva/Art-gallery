@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Art Gallery</title>
+    <meta name = "author" content = "Sierhieieva Karyna">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h2>Таблиці</h2>
+    <table>
+        <caption>Колекція картин</caption>
+        <thead>
+            <tr>
+                <th>Мона Ліза</th>
+                <th>Зоряна ніч</th>
+                <th>Крик</th>
+                <th>Народження Венери</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="./src/mona_lisa.jpg" alt="Мона Ліза" width="300"></td>
+                <td><img src="./src/star_night.jpg" alt="Зоряна ніч" width="300"></td>
+                <td><img src="./src/scream.jpg" alt="Крик" width="300"></td>
+                <td><img src="./src/birth.jpg" alt="Народження Венери" width="300"></td>
+            </tr>
+            <tr>
+                <td><a href="https://uk.wikipedia.org/wiki/Мона_Ліза">Деталі картини "Мона Ліза"</a></td>
+                <td><a href="https://uk.wikipedia.org/wiki/Зоряна_ніч">Деталі картини "Зоряна ніч"</a></td>
+                <td><a href="https://uk.wikipedia.org/wiki/Крик">Деталі картини "Крик"</a></td>
+                <td><a href="https://uk.wikipedia.org/wiki/Народження_Венери">Деталі картини "Народження Венери"</a></td>
+            </tr>
+            <tr>
+                <td>Мона Ліза, написана Леонардо да Вінчі, вважається одним з найвідоміших творів мистецтва у світі.</td>
+                <td>Зоряна ніч - одна з найвідоміших картин Вінсента ван Гога, створена в 1889 році.</td>
+                <td>Крик - шедевр норвезького художника Едварда Мунка, створений у 1893 році.</td>
+                <td>Народження Венери - відома картина Сандро Боттічеллі, створена близько 1486 року.</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3>Складна таблиця</h3>
+    <table>
+        <colgroup>
+        <col style="background-color: #f0f8ff" />
+        <col class="colgroup-example" />
+        </colgroup>
+        <thead>
+        <tr>
+            <th colspan="2">Заголовок таблиці</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td rowspan="2">Об'єднана комірка</td>
+            <td>Комірка 1</td>
+        </tr>
+        <tr>
+            <td>Комірка 2</td>
+        </tr>
+        </tbody>
+    </table>
+</body>
+</html>
